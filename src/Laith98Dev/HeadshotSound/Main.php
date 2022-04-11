@@ -78,7 +78,7 @@ class Main extends PluginBase implements Listener{
                             $damager->sendMessage($msg);
                         }
                         
-                        if(($soundName = $this->cfg->get("sound.name")) && $msg !== ""){
+                        if(($soundName = $this->cfg->get("sound.name")) && $soundName !== ""){
                             $this->playSound($damager, $soundName);
                         }
                     }
@@ -87,16 +87,16 @@ class Main extends PluginBase implements Listener{
         }
     }
 
-    private function playSound(Player $player, string $sound, int $volume = 150, int $pitch = 1) {
-        // Stop currently sound
-        $packet = new StopSoundPacket();
+    private function playSound(Player $player, string $sound, int $volume = 150, int $pitch = 1){
+		// Stop currently sound
+		$packet = new StopSoundPacket();
 		$packet->soundName = $sound;
 		$packet->stopAll = true;
 		$player->getNetworkSession()->sendDataPacket($packet);
-
+		
 		$packet = new PlaySoundPacket();
-		$packet->soundName = $sound;   
-		$packet->x = $player->getPosition()->getX();
+		$packet->soundName = $sound;
+		$packet->x = $player->getPosition()->getX();	
 		$packet->y = $player->getPosition()->getY();
 		$packet->z = $player->getPosition()->getZ();
 		$packet->volume = $volume;
