@@ -12,7 +12,7 @@ namespace Laith98Dev\HeadshotSound;
  *	| |___| (_| | | |_| | | |/ /| (_) | |__| |  __/\ V / 
  *	|______\__,_|_|\__|_| |_/_/  \___/|_____/ \___| \_/  
  *	
- *	Copyright (C) 2021 Laith98Dev
+ *	Copyright (C) 2022 Laith98Dev
  *  
  *	Youtube: Laith Youtuber
  *	Discord: Laith98Dev#0695
