@@ -67,7 +67,7 @@ final class Main extends PluginBase{
             "message" => TextFormat::YELLOW . "Nice Headshot"
         ]);
 
-        $this->getServer()->getPluginManager()->registerEvent(EntityDamageByChildEntityEvent::class, function(EntityDamageByChildEntityEvent $ev) : void{
+        $this->getServer()->getPluginManager()->registerEvent(EntityDamageByChildEntityEvent::class, function(EntityDamageByChildEntityEvent $event) : void{
             $child = $event->getChild();
             $damager = $child->getOwningEntity();
             if($damager instanceof Player && ($child instanceof Arrow || $child instanceof Snowball || $child instanceof Egg)){
