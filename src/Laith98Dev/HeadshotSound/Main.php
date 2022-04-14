@@ -71,8 +71,8 @@ final class Main extends PluginBase{
             $child = $event->getChild();
             $damager = $child->getOwningEntity();
             if($damager instanceof Player && ($child instanceof Arrow || $child instanceof Snowball || $child instanceof Egg)){
-                if($child->getPosition()->getY() >= ($player->getPosition()->getY() + $player->getEyeHeight())){
                     $msg = $this->cfg->get("message");
+                if($child->getPosition()->getY() >= ($damager->getPosition()->getY() + $damager->getEyeHeight())){
                     if($msg !== false && $msg !== ""){
                         $damager->sendMessage($msg);
                     }
@@ -85,7 +85,7 @@ final class Main extends PluginBase{
         }, EventPriority::NORMAL, $this);
     }
 
-    private function playSound(Player $player, string $sound, int|float $volume = 150, int|float $pitch = 1){
+    private function playSound(Player $player, string $sound, int|floar $volume = 150, int|float $pitch = 1){
         // Stop currently sound
         $packet = new StopSoundPacket();
         $packet->soundName = $sound;
