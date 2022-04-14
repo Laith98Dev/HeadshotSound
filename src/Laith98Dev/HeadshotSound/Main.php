@@ -71,8 +71,8 @@ final class Main extends PluginBase{
             $child = $event->getChild();
             $damager = $child->getOwningEntity();
             if($damager instanceof Player && ($child instanceof Arrow || $child instanceof Snowball || $child instanceof Egg)){
-                    $msg = $this->cfg->get("message");
                 if($child->getPosition()->getY() >= ($damager->getPosition()->getY() + $damager->getEyeHeight())){
+                    $msg = $this->cfg->get("message");
                     if($msg !== false && $msg !== ""){
                         $damager->sendMessage($msg);
                     }
