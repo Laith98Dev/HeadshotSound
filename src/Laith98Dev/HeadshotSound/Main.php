@@ -85,7 +85,7 @@ final class Main extends PluginBase{
         }, EventPriority::NORMAL, $this);
     }
 
-    private function playSound(Player $player, string $sound, int|floar $volume = 150, int|float $pitch = 1){
+    private function playSound(Player $player, string $sound, int|float $volume = 150, int|float $pitch = 1){
         // Stop currently sound
         $packet = new StopSoundPacket();
         $packet->soundName = $sound;
